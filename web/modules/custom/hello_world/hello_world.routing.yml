@@ -4,5 +4,5 @@ hello_world.my_page:
     _controller: '\Drupal\hello_world\Controller\WelcomeController::myPage'
     _title: 'My first page in Custom Module Development'
   requirements:
-    _permission: 'access page'
+    _permission: 'access page,static permission 2'
     
