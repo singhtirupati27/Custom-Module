@@ -1,9 +1,9 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: 4ffb9742-9362-4a0e-b525-d656275cf6b9
+uuid: 50753aaa-c244-435f-8681-1c4ab7e86c74
 name: 'Custom Module'
-mail: tirupati.singh@innoraft.com
+mail: admin@example.com
 slogan: ''
 page:
   403: ''

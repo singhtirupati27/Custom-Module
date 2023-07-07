@@ -1,4 +1,4 @@
-uuid: 7de44a26-e179-43c8-a924-1fb8521d12b6
+uuid: 02f644de-c1e0-424f-ac45-484148042c77
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,7 @@ dependencies:
     - contact
     - file
     - filter
+    - hello_world
     - search
     - shortcut
     - system
@@ -21,6 +22,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access page'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'delete own files'
