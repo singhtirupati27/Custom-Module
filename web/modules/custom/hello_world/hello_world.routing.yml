@@ -6,3 +6,11 @@ hello_world.my_page:
   requirements:
     _permission: 'access page+static permission 2'
     
+hello_world.demoform:
+  path: '/hello-world/form'
+  defaults:
+    _form: '\Drupal\hello_world\Form\HelloWorldForm'
+    _title: 'Default Form'
+  requirements:
+    _permission: 'access content'
+    _role: 'content_editor+administrator+authenticated_user'

@@ -1,0 +1,15 @@
+<?php
+
+  /**
+   * Implements hooks_form_alter()
+   */
+  function hello_world_form_alter(&$form, &$form_state, $form_id) {
+    // dsm($form_id);
+    if ($form_id == 'hello_world_form') {
+      $form['name']['#title'] = t('Hello World Form');
+      $form['name']['#placeholder'] = t('This is implemented using hooks_form_alter');
+      $form['actions']['submit']['#value'] = t('Save Form Now');
+    }
+  }
+
+?>
