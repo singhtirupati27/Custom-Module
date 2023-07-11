@@ -21,5 +21,3 @@ class WelcomeController extends ControllerBase {
     return ['#markup' => 'Hello'. $name];
   }
 }
-
-?>
