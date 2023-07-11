@@ -1,0 +1,22 @@
+name: Hello World Module
+description: Create a page showing "Hello World".
+package: Custom
+
+type: module
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - drupal:link
+  - drupal:views
+
+test-dependencies:
+  - drupal:image
+
+configure: hello_world.settings
+configure_parameters:
+  pluginId: hello_world_plugin
+
+php: 8.0
+
+hidden: false
+required: false

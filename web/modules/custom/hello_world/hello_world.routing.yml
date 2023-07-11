@@ -1,0 +1,8 @@
+hello_world.my_page:
+  path: '/mypage'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\WelcomeController::myPage'
+    _title: 'My first page in Custom Module Development'
+  requirements:
+    _permission: 'access page+static permission 2'
+    
