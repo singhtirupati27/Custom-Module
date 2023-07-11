@@ -1,0 +1,16 @@
+pavilion.simplecontent:
+  path: '/pavilion'
+  defaults:
+    _controller: '\Drupal\pavilion\Controller\PavilionController::simpleContent'
+    _title: 'Simplicity is the ultimate sophistication'
+  requirements:
+    _permission: 'access content'
+
+pavilion.variablecontent:
+  path: '/pavilion/{name_1}/{name_2}'
+  defaults:
+    _controller: '\Drupal\pavilion\Controller\PavilionController::variableContent'
+    _title: 'Dynamic Greeting'
+  requirements:
+    _permission: 'access content'
+    
