@@ -53,6 +53,68 @@ class PavilionForm extends FormBase {
       '#required' => TRUE,
     ];
 
+    $form['country'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('Country'),
+      '#options' => [
+        'india' => $this->t('India'),
+        'us' => $this->t('US'),
+        'other' => $this->t('Other'),
+        'custom' => $this->t('Custom'),
+      ],
+      '#attributes' => [
+        'id' => 'field_country_select',
+      ],
+      '#states' => [
+        'enabled' => [
+          ':input[id="other_country"]' => ['value' => ''],
+        ],
+      ],
+    ];
+
+    $form['choice_select'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('Do you want to select other country?'),
+      '#options' => [
+        'yes' => $this->t('Yes'),
+        'no' => $this->t('No'),
+      ],
+      '#attributes' => [
+        'id' => 'field_choice_select',
+      ],
+      '#states' => [
+        'visible' => [
+          ':input[id="field_country_select"]' => [
+            ['value' => 'other'],
+            'or',
+            ['value' => 'custom'],
+          ],
+        ],
+      ],
+    ];
+
+    $form['other_country'] = [
+      '#type' => 'textfield',
+      '#size' => '60',
+      '#placeholder' => 'Enter your country',
+      '#attributes' => [
+        'id' => 'other_country',
+      ],
+      '#states' => [
+        'visible' => [
+          ':input[id="field_country_select"]' => [
+            ['value' => 'other'],
+            'or',
+            ['value' => 'custom'],
+          ],
+          'and',
+          ':input[id="field_choice_select"]' => [
+            'value' => 'yes',
+          ],
+        ],
+      ],
+    ];
+
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
