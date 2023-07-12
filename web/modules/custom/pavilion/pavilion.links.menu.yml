@@ -4,3 +4,10 @@ pavilion.simplecontentpage:
   route_name: pavilion.simplecontent
   weight: 10
   menu_name: main
+
+pavilion.simpleform:
+  title: FT2023-361
+  description: Link to the simple form
+  route_name: pavilion.simpleformcontent
+  weight: 17
+  menu_name: main

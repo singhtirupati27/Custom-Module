@@ -1,7 +1,13 @@
 hello_world.formpage:
-  title: Hello World Form
-  description: First custom module form.
+  title: FT2023-360
+  description: Implemented hook.
   route_name: hello_world.demoform
-  weight: 15
+  weight: 16
   menu_name: main
   
+hello_world.firstpage:
+  title: FT2023-359
+  description: First custom module to display current logged in user.
+  route_name: hello_world.my_page
+  weight: 15
+  menu_name: main

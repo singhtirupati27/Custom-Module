@@ -55,11 +55,11 @@ class HelloWorldForm extends FormBase {
     ];
 
     $form['actions']['#type'] = 'actions';
-    $form['actions']['submit'] = array (
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Register'),
       '#button_type' => 'primary',
-    ); 
+    ]; 
 
     return $form;
   }
@@ -77,7 +77,7 @@ class HelloWorldForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::messenger()->addMessage(t("Form has been submitted successfully! Submitted values are:"));
+    \Drupal::messenger()->addMessage($this->t("Form has been submitted successfully! Submitted values are:"));
     foreach ($form_state->getValues() as $key => $value) {
       \Drupal::messenger()->addMessage($key . ':' . $value);
     }

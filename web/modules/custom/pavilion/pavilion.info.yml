@@ -3,3 +3,4 @@ description: 'Code to spark my module development understanding!'
 type: module
 core_version_requirement: ^10
 package: Custom
+configure: pavilion.admin_settings
