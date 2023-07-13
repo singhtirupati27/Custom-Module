@@ -10,6 +10,7 @@ dependencies:
     - file
     - filter
     - hello_world
+    - permission_module
     - search
     - shortcut
     - system
@@ -27,6 +28,9 @@ permissions:
   - 'access site-wide contact form'
   - 'delete own files'
   - 'post comments'
+  - 'sample permission 1'
+  - 'sample permission 3'
   - 'search content'
   - 'skip comment approval'
+  - 'static permission 2'
   - 'use text format basic_html'
