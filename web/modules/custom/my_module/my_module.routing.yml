@@ -1,0 +1,8 @@
+my_module.render_view:
+  path: '/my-module'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\ModuleController::myPage'
+    _title: 'My Custom Module Page'
+  requirements:
+    _permission: 'access page'
+    
