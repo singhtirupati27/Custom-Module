@@ -46,3 +46,11 @@ pavilion.anotherpath:
     _title: 'Confirm Delete'
   requirements:
     _permission: 'administer site configuration'
+
+pavilion.ajaxform:
+  path: '/pavilion/ajax-form'
+  defaults:
+    _form: '\Drupal\pavilion\Form\PavilionAjaxForm'
+    _title: 'Pavilion Ajax Form'
+  requirements:
+    _permission: 'access content'

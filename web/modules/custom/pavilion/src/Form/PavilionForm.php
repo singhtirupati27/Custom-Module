@@ -2,6 +2,9 @@
 
 namespace Drupal\pavilion\Form;
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -26,20 +29,23 @@ class PavilionForm extends FormBase {
       '#title' => $this->t('Full Name'),
       '#placeholder' => $this->t('Enter your full name.'),
       '#required' => TRUE,
+      '#suffix' => '<div class="pav-error" id="full_name"></div>'
     ];
-
+    
     $form['phone'] = [
       '#type' => 'tel',
       '#title' => $this->t('Phone Number'),
       '#placeholder' => $this->t('9123456780.'),
       '#required' => TRUE,
+      '#suffix' => '<div class="pav-error" id="phone"></div>'
     ];
-
+    
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Email'),
       '#placeholder' => $this->t('Enter your email'),
       '#required' => TRUE,
+      '#suffix' => '<div class="pav-error" id="email"></div>'
     ];
 
     $form['gender'] = [
@@ -120,6 +126,9 @@ class PavilionForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
       '#button_type' => 'primary',
+      '#ajax' => [
+        'callback' => '::validateFormData',
+      ],
     ];
 
     return $form;
@@ -128,7 +137,25 @@ class PavilionForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state)  {
+    $this->messenger()->addStatus($this->t('You have successfully submitted the form!'));
+  }
+
+  /**
+   * Function to validate form data and return error message using ajax response
+   * if any error found in input data.
+   * 
+   * @param array $form
+   *   Contain structure of the form.
+   * 
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   * 
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   */
+  public function validateFormData(array &$form, FormStateInterface $form_state) {
+    $ajax_response = new AjaxResponse();
+
     // List of accepted domains.
     $acceptedDomains = ['gmail.com', 'yahoo.com', 'outlook.com'];
     $email = $form_state->getValue('email');
@@ -137,40 +164,26 @@ class PavilionForm extends FormBase {
     if (!empty($form_state->getValue('phone'))) {
       // Check if phone pattern is match or not.
       if (!preg_match('/^[0-9]{10}+$/', $form_state->getValue('phone'))) {
-        $form_state->setErrorByName('phone', $this->t('Invalid phone number provided.'));
+        return $ajax_response->addCommand(new HtmlCommand('#phone', 'Invalid phone number provided.'));
       }
     }
-    // Check if field id empty.
     else {
-      $form_state->setErrorByName('phone', $this->t('Phone number field cannot be empty!'));
+      return $ajax_response->addCommand(new HtmlCommand('#phone', 'Phone number field cannot be empty.'));
     }
 
     // Check if field is empty or not.
-    if(!empty($form_state->getValue('email'))) {
+    if (!empty($form_state->getValue('email'))) {
       // Check for valid email domains.
       if (!in_array(substr($email, strrpos($email, '@') + 1), $acceptedDomains)) {
-        $form_state->setErrorByName('email', $this->t('Not accepted domain.'));
+        return $ajax_response->addCommand(new HtmlCommand('#email', 'This domain is not accepted.'));
       }
       // Check if provided pattern match or not.
       if (!preg_match('/^[A-Za-z0-9+_.-]+@(.+)$/', $form_state->getValue('email'))) {
-        $form_state->setErrorByName('email', $this->t('Enter valid email address.'));
+        return $ajax_response->addCommand(new HtmlCommand('#email', 'Please enter valid email address.'));
       }
     }
-    // If field is empty then provide message.
     else {
-      $form_state->setErrorByName('email', $this->t('Email field cannot be empty.'));
-    }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function submitForm(array &$form, FormStateInterface $form_state)  {
-    $this->messenger()->addStatus($this->t('You have successfully submitted the form!'));
-
-    // Display the submitted values.
-    foreach ($form_state->getValues() as $key => $value) {
-      \Drupal::messenger()->addMessage($key . ': ' . $value);
+      return $ajax_response->addCommand(new HtmlCommand('#email', 'Email field cannot be empty.'));
     }
   }
 
