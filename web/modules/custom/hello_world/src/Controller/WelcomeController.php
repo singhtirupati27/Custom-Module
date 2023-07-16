@@ -18,6 +18,6 @@ class WelcomeController extends ControllerBase {
   public function myPage() {
     $user = \Drupal::currentUser();
     $name = $user->getDisplayName();
-    return ['#markup' => 'Hello'. $name];
+    return ['#markup' => 'Hello '. $name];
   }
 }
