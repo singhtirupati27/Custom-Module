@@ -10,3 +10,16 @@ function hello_world_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#value'] = t('Save Form Now');
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function hello_world_theme() {
+  return [
+    'hello_world_block' => [
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+  ];
+}
