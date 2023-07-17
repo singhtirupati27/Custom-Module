@@ -14,11 +14,14 @@ function hello_world_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_theme().
  */
-function hello_world_theme() {
+function hello_world_theme($existing, $type, $theme, $path): array{
   return [
     'hello_world_block' => [
       'variables' => [
         'data' => [],
+        'active_tab' => NULL,
+        'body_text' => NULL,
+        'tabs' => [],
       ],
     ],
   ];
