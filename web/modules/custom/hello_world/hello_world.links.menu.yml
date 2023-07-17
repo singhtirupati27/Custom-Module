@@ -1,0 +1,7 @@
+hello_world.formpage:
+  title: Hello World Form
+  description: First custom module form.
+  route_name: hello_world.demoform
+  weight: 15
+  menu_name: main
+  

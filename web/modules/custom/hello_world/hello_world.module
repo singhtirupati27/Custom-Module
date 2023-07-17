@@ -1,0 +1,58 @@
+<?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function hello_world_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'hello_world_form') {
+    $form['name']['#title'] = t('Hello World Form');
+    $form['name']['#placeholder'] = t('This is implemented using hooks_form_alter');
+    $form['actions']['submit']['#value'] = t('Save Form Now');
+  }
+}
+
+/**
+ * Implements hook_hello_world_count_increament().
+ */
+function hello_world_count_increament($current_count, NodeInterface $node) {
+  if ($current_count == 1) {
+    \Drupal::messenger()->addMessage(t('This is the first time you have viewed the mode %title', ['%title' => $node->label()]));
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function hello_world_node_view(array $build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  // Count the number of times the current node has been viewed this session.
+  $session = \Drupal::request()->getSession();
+  $current_count = $session->get('hello_world.view_counts', array());
+
+  if (!isset($current_count[$entity->id()])) {
+    $current_count[$entity->id()] = 1;
+  }
+  else {
+    $current_count[$entity->id()]++;
+  }
+
+  $session->set('hello_world.view_counts', $current_count);
+
+  // Invoke a hook to alter other modules that the count was updated.
+  $module_handler = \Drupal::moduleHandler();
+
+  // Invoking the hook_hello_world_count_increament().
+  $module_handler->invokeAll('hello_world_count_increament', array($current_count[$entity->id()], $entity));
+
+  // Displays the current number of pages the user has viewed along with the
+  // node's content.
+  $build['view_count'] = [
+    '#markup' => '<p>' . t('You have viewed this node @total times this session.', ['@total' => $current_count[$entity->id()]]) . '</p>',
+    '#cache' => [
+      'max-age' => 0,
+    ],
+  ];
+}
