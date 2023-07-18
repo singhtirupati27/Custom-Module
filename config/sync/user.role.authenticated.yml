@@ -9,7 +9,6 @@ dependencies:
     - contact
     - file
     - filter
-    - hello_world
     - permission_module
     - search
     - shortcut
@@ -23,7 +22,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access page'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'delete own files'
@@ -32,5 +30,4 @@ permissions:
   - 'sample permission 3'
   - 'search content'
   - 'skip comment approval'
-  - 'static permission 2'
   - 'use text format basic_html'

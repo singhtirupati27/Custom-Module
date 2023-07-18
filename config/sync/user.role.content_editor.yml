@@ -10,6 +10,7 @@ dependencies:
     - comment
     - contextual
     - file
+    - my_route
     - node
     - path
     - system
@@ -26,6 +27,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access custom page'
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
