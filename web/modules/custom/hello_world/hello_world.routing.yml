@@ -14,3 +14,11 @@ hello_world.demoform:
   requirements:
     _permission: 'access content'
     _role: 'content_editor+administrator+authenticated_user'
+
+hello_world.custom_page:
+  path: '/custom-welcome-page'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\BlockController::welcomeBlock'
+    _title: 'Welcome to Hello World Page'
+  requirements:
+    _permission: 'access content'

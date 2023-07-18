@@ -5,6 +5,9 @@ namespace Drupal\hello_world\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Provides a Hello World Form to get user details.
+ */
 class HelloWorldForm extends FormBase {
 
   /**

@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\user\UserInterface;
+
 /**
  * Implements hook_form_alter().
  */
@@ -25,4 +29,15 @@ function hello_world_theme($existing, $type, $theme, $path): array{
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function hello_world_user_login(UserInterface $account) {
+  $user = \Drupal::currentUser();
+  if ($user->hasPermission('access content')) {
+    $response = new RedirectResponse('/custom-welcome-page');
+    $response->send();
+  }
 }
