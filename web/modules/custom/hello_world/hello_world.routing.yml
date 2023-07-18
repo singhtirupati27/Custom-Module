@@ -13,7 +13,7 @@ hello_world.demoform:
     _title: 'Hello World Form'
   requirements:
     _permission: 'access content'
-    _role: 'content_editor+administrator+authenticated_user'
+    _role: 'content_editor+administrator+authenticated'
 
 hello_world.custom_page:
   path: '/custom-welcome-page'
@@ -22,3 +22,4 @@ hello_world.custom_page:
     _title: 'Welcome to Hello World Page'
   requirements:
     _permission: 'access content'
+    _role: 'content_editor+administrator+authenticated'
