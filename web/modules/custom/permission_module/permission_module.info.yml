@@ -1,0 +1,5 @@
+name: Permission Module
+description: Custom module for sample permission.
+type: module
+core_version_requirement: ^9 || ^10
+package: Custom
