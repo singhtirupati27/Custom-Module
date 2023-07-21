@@ -1,20 +1,17 @@
 <?php
 
-namespace Drupal\hello_world\Controller;
+namespace Drupal\my_service\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Session\AccountInterface;
+use Drupal\my_service\LoggedInUser;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/**
- * Provides route responses for the Hello World module.
- */
-class WelcomeController extends ControllerBase {
+class MyServiceController extends ControllerBase {
 
   /**
    * The current user account.
    * 
-   * @var Drupal\Core\Session\AccountInterface $account
+   * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
@@ -24,7 +21,7 @@ class WelcomeController extends ControllerBase {
    * @param Drupal\Core\Session\AccountInterface $account
    *   Current logged in user data.
    */
-  public function __construct(AccountInterface $account) {
+  public function __construct(LoggedInUser $account) {
     $this->account = $account;
   }
 
@@ -33,19 +30,22 @@ class WelcomeController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('current_user')
+      $container->get('my_service.logged_in_user')
     );
   }
 
   /**
-   * Returns a simple page.
+   * Returns a simple page with currently logged in username.
    * 
    * @return array
    *   A simple renderable array.
    */
-  public function myPage() {
-    $name = $this->account->getDisplayName();
-    return ['#markup' => 'Hello <strong>'. strtoupper($name) . '</strong> from Hello World Module.'];
+  public function welcomePage() {
+    $user = $this->account->getUserName();
+
+    return [
+      '#markup' => t('Hi <strong>' . strtoupper($user) . '</strong>')
+    ];
   }
 
 }

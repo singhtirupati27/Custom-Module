@@ -4,11 +4,26 @@ namespace Drupal\hello_world\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Provides a Hello World Form to get user details.
  */
 class HelloWorldForm extends FormBase {
+
+  /**
+   * @var Drupal\Core\Messenger\MessengerInterface $messenger
+   */
+  protected $messenger;
+
+  /**
+   * Constructor to initialise messenger object.
+   * 
+   * @param Drupal\Core\Messenger\MessengerInterface $messenger
+   */
+  public function __construct(MessengerInterface $messenger) {
+    $this->messenger = $messenger;
+  }
 
   /**
    * {@inheritdoc}
@@ -80,9 +95,9 @@ class HelloWorldForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::messenger()->addMessage($this->t("Form has been submitted successfully! Submitted values are:"));
+    $this->messenger->addMessage($this->t("Form has been submitted successfully! Submitted values are:"));
     foreach ($form_state->getValues() as $key => $value) {
-      \Drupal::messenger()->addMessage($key . ':' . $value);
+      $this->messenger->addMessage($key . ':' . $value);
     }
   }
   
