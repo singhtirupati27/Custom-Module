@@ -1,0 +1,25 @@
+uuid: ae9e1eec-669f-41b3-8a4f-cad0f9a5a8dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello_world
+    - system
+  theme:
+    - olivero
+id: olivero_myhelloblock
+theme: olivero
+region: content_above
+weight: -8
+provider: null
+plugin: my_hello_block
+settings:
+  id: my_hello_block
+  label: 'My Hello Block'
+  label_display: visible
+  provider: hello_world
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /custom-welcome-page
