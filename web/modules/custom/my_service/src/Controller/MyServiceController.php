@@ -18,7 +18,7 @@ class MyServiceController extends ControllerBase {
   /**
    * Contructor to initialise account property with current user.
    * 
-   * @param Drupal\Core\Session\AccountInterface $account
+   * @param Drupal\my_service\LoggedInUser $account
    *   Current logged in user data.
    */
   public function __construct(LoggedInUser $account) {
