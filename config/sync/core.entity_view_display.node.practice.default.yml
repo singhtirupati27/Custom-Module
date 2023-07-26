@@ -1,0 +1,28 @@
+uuid: e9781db4-3304-4af6-a519-71a601ebae22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.practice.field_color_picker
+    - node.type.practice
+  module:
+    - rgb_color
+    - user
+id: node.practice.default
+targetEntityType: node
+bundle: practice
+mode: default
+content:
+  field_color_picker:
+    type: rgb_hex_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

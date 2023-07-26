@@ -1,0 +1,20 @@
+pavilion.simplecontentpage:
+  title: Simple Content Link
+  description: Link to the simplecontent() method
+  route_name: pavilion.simplecontent
+  weight: 10
+  menu_name: main
+
+pavilion.simpleform:
+  title: FT2023-361
+  description: Link to the simple form
+  route_name: pavilion.simpleformcontent
+  weight: 17
+  menu_name: main
+
+pavilion.ajaxform:
+  title: Ajax Form
+  description: Link to simple ajax form
+  route_name: pavilion.ajaxform
+  weight: 18
+  menu_name: main
