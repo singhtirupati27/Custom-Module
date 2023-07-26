@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
+
+function rgb_color_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  // Check if the field type is the desired custom field type.
+  $field_type = $field_definition->getType();
+  if ($field_type == 'rgb_color') {
+    // Check if the current user has the 'administrator' role.
+    if (!in_array('administrator', $account->getRoles())) {
+      // Deny access to non-admin users.
+      return AccessResult::forbidden();
+    }
+  }
+
+  return AccessResult::neutral();
+}

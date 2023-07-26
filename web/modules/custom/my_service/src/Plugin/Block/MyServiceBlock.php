@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Block(
  *  id = "my_service_block",
  *  admin_label = @Translation("My Service Module Custom Block"),
- *  category = @Translation("My Service Block"),
+ *  category = @Translation("My Service Block")
  * )
  */
 class MyServiceBlock extends BlockBase implements ContainerFactoryPluginInterface {
