@@ -31,6 +31,7 @@ module:
   menu_ui: 0
   my_module: 0
   my_route: 0
+  my_service: 0
   mysql: 0
   node: 0
   options: 0
@@ -39,6 +40,7 @@ module:
   path_alias: 0
   pavilion: 0
   permission_module: 0
+  rgb_color: 0
   sample_module: 0
   search: 0
   shortcut: 0
