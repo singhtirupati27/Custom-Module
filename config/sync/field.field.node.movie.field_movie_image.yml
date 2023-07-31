@@ -1,0 +1,40 @@
+uuid: f0406069-5c17-4e18-8bde-ad368d7ae3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_image
+    - node.type.movie
+  module:
+    - image
+_core:
+  default_config_hash: lZPrBxSzJH_tUVb_GulSid2vVx29x9dWlHinLJ-FvG8
+id: node.movie.field_movie_image
+field_name: field_movie_image
+entity_type: node
+bundle: movie
+label: Image
+description: 'Stores movie image.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'movie-image-[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: 1
+  alt_field_required: 1
+  title_field: 0
+  title_field_required: 0
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
