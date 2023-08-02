@@ -23,7 +23,7 @@ use Drupal\movie_module\AwardWinningMovieInterface;
  *     "form" = {
  *       "add" = "Drupal\movie_module\Form\AwardWinningMovieForm",
  *       "edit" = "Drupal\movie_module\Form\AwardWinningMovieForm",
- *       "delete" = "Drupal\Core\Entity\EntityDeleteForm"
+ *       "delete" = "Drupal\movie_module\Form\AwardWinningMovieDeleteForm"
  *     }
  *   },
  *   config_prefix = "award_winning_movie",

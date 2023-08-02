@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+/**
+ * Implements hook_module_preuninstall().
+ */
+function movie_module_module_preuninstall($module) {
+  if ($module === 'movie_module') {
+    // Check if the module has associated content (e.g., nodes).
+    $entityTypeManager = \Drupal::entityTypeManager();
+    $nodeStorage = $entityTypeManager->getStorage('node');
+    $count = $nodeStorage->getQuery()
+      ->accessCheck(TRUE)
+      ->condition('type', 'movie')
+      ->count()
+      ->execute();
+
+    // If there are nodes of the content type, display a warning message.
+    if ($count > 0) {
+      $contentTypeLabel = $entityTypeManager->getDefinition('node')->getBundleLabel();
+      $message = t('Movie module cannot be uninstalled because there are @count @type associated with it.', [
+        '@count' => $count,
+        '@type' => $contentTypeLabel,
+      ]);
+      throw new \Exception($message);
+    }
+  }
+}

@@ -19,6 +19,9 @@ class AwardWinningMovieForm extends EntityForm {
    */
   protected $entityTypeManager;
 
+  /**
+   * Constructor to initialize entity type manager object.
+   */
   public function __construct(EntityTypeManager $entityTypeManager) {
     $this->entityTypeManager = $entityTypeManager;
   }
@@ -36,16 +39,17 @@ class AwardWinningMovieForm extends EntityForm {
    * {@inheritdoc}
    */
   public function form(array $form, FormStateInterface $form_state) {
-
     $form = parent::form($form, $form_state);
-
     $form['label'] = [
-      '#type' => 'textfield',
+      '#type' => 'entity_autocomplete',
       '#title' => $this->t('Movie Name'),
-      '#maxlength' => 255,
-      '#default_value' => $this->entity->label(),
+      '#target_type' => 'node',
       '#description' => $this->t('Name of the award winning movie.'),
       '#required' => TRUE,
+      '#default_value' => $this->entityTypeManager->getStorage('node')->load($this->entity->get('label') ?? ''),
+      '#selection_settings' => [
+        'target_bundles' => ['movie'],
+      ],
     ];
 
     $form['id'] = [
@@ -55,13 +59,6 @@ class AwardWinningMovieForm extends EntityForm {
         'exists' => '\Drupal\movie_module\Entity\AwardWinningMovie::load',
       ],
       '#disabled' => !$this->entity->isNew(),
-    ];
-
-    $form['description'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Description'),
-      '#default_value' => $this->entity->get('description'),
-      '#description' => $this->t('Description of the award winning movie.'),
     ];
 
     $form['movie_year'] = [
