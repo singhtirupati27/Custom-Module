@@ -5,10 +5,10 @@
 /web/sites/*/*services*.yml
 /web/sites/*/settings.php
 
-# Ignore paths that may contain user-generated content
+# Ignore paths that may contain user-generated content.
 /web/sites/*/files
 
-# Ignore drupal core (if not versioning drupal sources)
+# Ignore drupal core (if not versioning drupal sources).
 /web/core/*
 /web/modules/README.txt
 /web/profiles/README.txt
@@ -34,3 +34,6 @@
 /web/web.config
 /web/modules/contrib/
 /web/themes/contrib/
+
+# Ignoring VS code generated files.
+/.vscode
