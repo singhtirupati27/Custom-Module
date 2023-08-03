@@ -1,0 +1,21 @@
+uuid: b52ce498-359c-4d6e-b1f1-d041b006eda2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_picker
+    - node.type.practice
+  module:
+    - rgb_color
+id: node.practice.field_color_picker
+field_name: field_color_picker
+entity_type: node
+bundle: practice
+label: 'Color Picker'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rgb_color

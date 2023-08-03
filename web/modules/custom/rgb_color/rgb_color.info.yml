@@ -1,0 +1,5 @@
+name: RGB Color Module
+description: 'Provide color picker in RGB format.'
+type: module
+core_version_requirement: ^9 || ^10
+package: Custom

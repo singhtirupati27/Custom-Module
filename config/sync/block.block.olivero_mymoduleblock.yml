@@ -1,0 +1,20 @@
+uuid: c7463a0b-a0b0-4efb-8588-1ba9e8a4bf88
+langcode: en
+status: true
+dependencies:
+  module:
+    - my_module
+  theme:
+    - olivero
+id: olivero_mymoduleblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: mymodule_block
+settings:
+  id: mymodule_block
+  label: 'MyModule Block'
+  label_display: visible
+  provider: my_module
+visibility: {  }

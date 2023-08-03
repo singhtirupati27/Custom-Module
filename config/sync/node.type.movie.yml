@@ -1,0 +1,16 @@
+uuid: 203115b2-210f-414f-9c2e-3e7114976846
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - movie_module
+_core:
+  default_config_hash: tRgxLUWjOG2U1NZL94SX8zs1EM0fTeolj6SllWJLX30
+name: Movie
+type: movie
+description: 'Content type that can be used to create movie content'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

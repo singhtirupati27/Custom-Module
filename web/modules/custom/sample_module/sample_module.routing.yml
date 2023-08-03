@@ -1,0 +1,8 @@
+sample_module.content:
+  path: '/sample-module/content'
+  defaults:
+    _controller: '\Drupal\sample_module\Controller\SampleController::content'
+    _title: 'Routing Practice'
+  requirements:
+    _permission: 'access content'
+    _role: 'administrator,content_editor'

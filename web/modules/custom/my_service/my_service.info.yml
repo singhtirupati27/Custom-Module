@@ -1,0 +1,5 @@
+name: My Service Module
+description: Module for practicing service and dependency injection.
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

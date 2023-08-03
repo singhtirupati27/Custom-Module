@@ -1,0 +1,41 @@
+<?php
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Function to get movie budget price from config form.
+ *
+ * @return int
+ *   Returns movie budget value.
+ */
+function movie_budget_get_budget() {
+  $config = \Drupal::config('movie_budget.settings');
+  $budget = $config->get('budget');
+  Cache::invalidateTags(['config:movie_budget.settings']);
+  return $budget;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function movie_budget_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->bundle() === 'movie') {
+    $budget = movie_budget_get_budget();
+    $moviePrice = $entity->get('field_movie_price')->getValue()[0]['value'];
+    if ($moviePrice > $budget) {
+      $message = 'The movie is over budget!';
+    }
+    elseif ($moviePrice < $budget) {
+      $message = 'The movie is under budget!';
+    }
+    else {
+      $message = 'The movie is within budget!';
+    }
+    $build['moive_budget'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="movie-budget"><strong>Budget Status: ' . $message . '</strong></div>',
+    ];
+  }
+}
