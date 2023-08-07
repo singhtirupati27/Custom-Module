@@ -1,0 +1,5 @@
+services:
+  custom_movie_event_node_view:
+    class: '\Drupal\custom_movie_event\EventSubscriber\NodeViewEventSubscriber'
+    tags:
+      - { name: 'event_subscriber' }

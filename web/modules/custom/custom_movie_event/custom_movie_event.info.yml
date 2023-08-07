@@ -1,0 +1,9 @@
+name: Movie Event
+description: 'Events to show message whether movie budget is over, within or under budget.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+depedencies:
+  - movie_module
+  - movie_budget
+  

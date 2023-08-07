@@ -1,0 +1,25 @@
+uuid: 9fe12bb6-c280-492c-b56e-3eb98f9d2198
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_price
+    - node.type.movie
+_core:
+  default_config_hash: 3jvLSs5aGlUdvVDY5H_i-kcCG9R4vIgV-Ztgzodhrd4
+id: node.movie.field_movie_price
+field_name: field_movie_price
+entity_type: node
+bundle: movie
+label: 'Movie Price'
+description: 'Holds movie budget price.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1.0
+  prefix: 'Rs '
+  suffix: ' INR'
+  max: ''
+field_type: decimal

@@ -1,0 +1,6 @@
+name: My Route Module
+description: Custom route module for practice.
+type: module
+core: ^8.x
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom

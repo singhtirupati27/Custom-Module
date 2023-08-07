@@ -1,0 +1,29 @@
+uuid: ff836fba-1b32-4bf6-9d78-81da0ebf01e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.practice.field_color_picker
+    - node.type.practice
+  module:
+    - rgb_color
+    - user
+id: node.practice.teaser
+targetEntityType: node
+bundle: practice
+mode: teaser
+content:
+  field_color_picker:
+    type: background_color_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
