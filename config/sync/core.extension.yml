@@ -13,6 +13,8 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  custom_events: 0
+  custom_movie_event: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -29,6 +31,7 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  mix: 0
   movie_budget: 0
   movie_module: 0
   my_module: 0
