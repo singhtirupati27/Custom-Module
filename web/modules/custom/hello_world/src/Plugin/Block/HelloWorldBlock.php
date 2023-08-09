@@ -8,7 +8,7 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides 'HelloWorld' block.
- *  
+ *
  * @Block(
  *  id = "hello_world_block",
  *  admin_label = @Translation("Hello World Block"),
@@ -52,7 +52,7 @@ class HelloWorldBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  public function defaultConfiguration() {  
+  public function defaultConfiguration() {
     return [
       'hello_world_block_name' => $this->t(''),
     ];

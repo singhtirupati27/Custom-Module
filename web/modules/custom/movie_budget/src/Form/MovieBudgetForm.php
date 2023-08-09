@@ -10,9 +10,9 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class MovieBudgetForm extends ConfigFormBase {
 
-  /** 
+  /**
    * Configuration settings.
-   * 
+   *
    * @var string
   */
   const SETTINGS = 'movie_budget.settings';
