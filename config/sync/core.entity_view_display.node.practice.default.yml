@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.practice.field_color_picker
+    - field.field.node.practice.field_kjbkb
     - node.type.practice
   module:
+    - datetime
     - rgb_color
     - user
 id: node.practice.default
@@ -19,6 +21,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_kjbkb:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

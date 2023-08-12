@@ -1,6 +1,6 @@
 uuid: 4be30aaa-63bc-428c-a9e6-42bffba311f3
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - my_service

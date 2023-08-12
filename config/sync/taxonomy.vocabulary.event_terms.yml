@@ -1,0 +1,8 @@
+uuid: 3fa9edf8-2afa-4120-8618-70cd0ae736f3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Terms'
+vid: event_terms
+description: ''
+weight: 0

@@ -1,0 +1,5 @@
+name: Events Module
+description: 'Allow creating event content type.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

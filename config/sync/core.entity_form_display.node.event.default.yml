@@ -1,39 +1,65 @@
-uuid: e5fa86bd-4877-44c4-adc1-55eeb48122bb
+uuid: 0c393495-e4fc-4ff2-b8f5-0c12b10fdefa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.practice.field_color_picker
-    - field.field.node.practice.field_kjbkb
-    - node.type.practice
+    - field.field.node.event.body
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_type
+    - node.type.event
   module:
     - datetime
     - path
-    - rgb_color
-id: node.practice.default
+    - text
+_core:
+  default_config_hash: diFx5VnRyeyMEeQPIToxzhcLFoBqozAPJDfliIf4SXI
+id: node.event.default
 targetEntityType: node
-bundle: practice
+bundle: event
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_color_picker:
-    type: hex_code_widget
-    weight: 122
+  field_event_date:
+    type: datetime_default
+    weight: 102
     region: content
     settings:
-      placeholder: 'Hex code'
+      placeholder: 'Event happening date.'
     third_party_settings: {  }
-  field_kjbkb:
-    type: datetime_default
-    weight: 123
+    label: inline
+  field_event_type:
+    type: text_textfield
+    weight: 103
     region: content
     settings: {  }
     third_party_settings: {  }
+    label: above
+  field_type:
+    type: entity_reference_autocomplete
+    weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: content
   path:
     type: path
     weight: 30

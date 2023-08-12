@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - events_db_module
+name: 'Events'
+type: 'event'
+description: 'Content type that can be used create event page.'
+help: ''
+preview_mode: 1
+new_revision: false
+display_submitted: true

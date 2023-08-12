@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.practice.field_color_picker
+    - field.field.node.practice.field_kjbkb
     - node.type.practice
   module:
     - rgb_color
@@ -26,4 +27,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_kjbkb: true

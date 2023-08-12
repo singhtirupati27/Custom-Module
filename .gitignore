@@ -34,6 +34,7 @@
 /web/web.config
 /web/modules/contrib/
 /web/themes/contrib/
+/web/sites/default/settings.local.php
 
 # Ignoring VS code generated files.
 /.vscode
