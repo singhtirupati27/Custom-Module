@@ -1,0 +1,15 @@
+events_db_module.event_dashboard:
+  path: '/event-dashboard'
+  defaults:
+    _controller: 'Drupal\events_db_module\Controller\EventDashboardController::eventsList'
+    _title: 'Events Dashboard'
+  requirements:
+    _permission: 'access content'
+
+events_db_module.event_form:
+  path: '/event-taxonomy'
+  defaults:
+    _form: 'Drupal\events_db_module\Form\EventTaxonomyForm'
+    _title: 'Event Taxonomy Term'
+  requirements:
+    _permission: 'access content'

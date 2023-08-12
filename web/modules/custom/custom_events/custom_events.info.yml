@@ -1,0 +1,5 @@
+name: Custom Event
+description: 'Event to show message when a config form is saved.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

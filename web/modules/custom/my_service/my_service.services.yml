@@ -1,0 +1,5 @@
+services:
+  my_service.logged_in_user:
+    class: Drupal\my_service\LoggedInUser
+    arguments: ['@current_user']
+    

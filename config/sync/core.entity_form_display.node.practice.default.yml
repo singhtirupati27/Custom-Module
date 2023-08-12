@@ -1,0 +1,82 @@
+uuid: e5fa86bd-4877-44c4-adc1-55eeb48122bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.practice.field_color_picker
+    - field.field.node.practice.field_kjbkb
+    - node.type.practice
+  module:
+    - datetime
+    - path
+    - rgb_color
+id: node.practice.default
+targetEntityType: node
+bundle: practice
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_color_picker:
+    type: hex_code_widget
+    weight: 122
+    region: content
+    settings:
+      placeholder: 'Hex code'
+    third_party_settings: {  }
+  field_kjbkb:
+    type: datetime_default
+    weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

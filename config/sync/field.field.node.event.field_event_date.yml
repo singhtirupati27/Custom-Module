@@ -1,0 +1,23 @@
+uuid: 8de6b249-5c26-4184-a8a6-386997dc55c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.event
+  module:
+    - datetime
+_core:
+  default_config_hash: kpGPBOhlI1QR-oZF6ivLhR9OlLaurj2t9CXVoqt1GUQ
+id: node.event.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: event
+label: 'Event Date'
+description: 'Stores event happening date.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

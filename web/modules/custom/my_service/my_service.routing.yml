@@ -1,0 +1,7 @@
+my_service.welcome_page:
+  path: '/my-service/welcome-page'
+  defaults:
+    _controller: '\Drupal\my_service\Controller\MyServiceController::welcomePage'
+    _title: 'Welcome to My Service Module'
+  requirements:
+    _permission: 'access content'

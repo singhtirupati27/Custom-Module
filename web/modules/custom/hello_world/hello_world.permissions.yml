@@ -1,0 +1,8 @@
+access page:
+  title: 'Access to content.'
+  description: 'Allow user to view content.'
+  restrict access: true
+
+static permission 2:
+  title: 'Second level permission.'
+  description: 'Gives static permission 2 to the users.'

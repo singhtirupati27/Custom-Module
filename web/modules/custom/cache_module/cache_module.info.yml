@@ -1,0 +1,5 @@
+name: cache_module
+type: module
+description: Cache implementation in custom module.
+package: Custom
+core_version_requirement: ^9 || ^10

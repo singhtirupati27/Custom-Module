@@ -1,0 +1,39 @@
+uuid: e9781db4-3304-4af6-a519-71a601ebae22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.practice.field_color_picker
+    - field.field.node.practice.field_kjbkb
+    - node.type.practice
+  module:
+    - datetime
+    - rgb_color
+    - user
+id: node.practice.default
+targetEntityType: node
+bundle: practice
+mode: default
+content:
+  field_color_picker:
+    type: rgb_hex_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_kjbkb:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

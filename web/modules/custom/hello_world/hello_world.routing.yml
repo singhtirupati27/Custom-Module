@@ -1,0 +1,25 @@
+hello_world.my_page:
+  path: '/mypage'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\WelcomeController::myPage'
+    _title: 'My first page in Custom Module Development'
+  requirements:
+    _permission: 'access page+static permission 2'
+    
+hello_world.demoform:
+  path: '/hello-world/form'
+  defaults:
+    _form: '\Drupal\hello_world\Form\HelloWorldForm'
+    _title: 'Hello World Form'
+  requirements:
+    _permission: 'access content'
+    _role: 'content_editor+administrator+authenticated'
+
+hello_world.custom_page:
+  path: '/custom-welcome-page'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\BlockController::welcomeBlock'
+    _title: 'Welcome to Hello World Page'
+  requirements:
+    _permission: 'access content'
+    _role: 'content_editor+administrator+authenticated'
