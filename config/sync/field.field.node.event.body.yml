@@ -1,0 +1,26 @@
+uuid: 92e8288f-7be4-44f1-9bdc-4b2bb6fcc03b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: NIyQm56FmOAqS_3-Kv2guhuJN2FmPxltcRfe8Y1gKjE
+id: node.event.body
+field_name: body
+entity_type: node
+bundle: event
+label: 'Event Details'
+description: 'Stores event information.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

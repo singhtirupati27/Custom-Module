@@ -1,0 +1,6 @@
+my_module.admin:
+  title: 'My Custom Module'
+  description: 'My custom module menu link.'
+  route_name: my_module.render_view
+  weight: 11
+  menu_name: main

@@ -1,0 +1,56 @@
+pavilion.simplecontent:
+  path: '/pavilion'
+  defaults:
+    _controller: '\Drupal\pavilion\Controller\PavilionController::simpleContent'
+    _title: 'Simplicity is the ultimate sophistication'
+  requirements:
+    _permission: 'access content'
+
+pavilion.variablecontent:
+  path: '/pavilion/{name_1}/{name_2}'
+  defaults:
+    _controller: '\Drupal\pavilion\Controller\PavilionController::variableContent'
+    _title: 'Dynamic Greeting'
+  requirements:
+    _permission: 'access content'
+    
+pavilion.simpleformcontent:
+  path: '/pavilion/form'
+  defaults:
+    _form: '\Drupal\pavilion\Form\PavilionForm'
+    _title: 'Pavilion Module Form'
+  requirements:
+    _permission: 'access content'
+
+pavilion.admin_settings:
+  path: '/admin/config/pavilion'
+  defaults:
+    _form: '\Drupal\pavilion\Form\ModuleConfigurationForm'
+    _title: 'Pavilion module configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+pavilion.delete:
+  path: '/pavilion/{id}/delete'
+  defaults:
+    _form: '\Drupal\pavilion\Form\ConfirmDeleteForm'
+    _title: 'Confirm Delete'
+  requirements:
+    _permission: 'administer site configuration'
+    id: ^\d+$
+
+pavilion.anotherpath:
+  path: '/pavilion/delete'
+  defaults:
+    _form: '\Drupal\pavilion\Form\ConfirmDeleteForm'
+    _title: 'Confirm Delete'
+  requirements:
+    _permission: 'administer site configuration'
+
+pavilion.ajaxform:
+  path: '/pavilion/ajax-form'
+  defaults:
+    _form: '\Drupal\pavilion\Form\PavilionAjaxForm'
+    _title: 'Pavilion Ajax Form'
+  requirements:
+    _permission: 'access content'

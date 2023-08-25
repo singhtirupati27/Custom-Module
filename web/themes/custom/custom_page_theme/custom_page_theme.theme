@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Functions to implement theming in the custom_page_theme theme.
+ */
+
+/**
+ * Implements template_preprocess_html() for adding class to body tag.
+ */
+function custom_theme_preprocess_html(&$variables) {
+  // Check if the current node is of Movies content type.
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node->bundle() == 'movie') {
+      $variables['attributes']['class'][] = 'movies-content-type';
+    }
+  }
+}
+
+/**
+ * Implementes hook_page_attachments_alter().
+ */
+function custom_page_page_attachments_alter(&$page) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'custom_page.example') {
+    $page['#attached']['library'][] = 'custom_page/custom_page_css';
+  }
+}

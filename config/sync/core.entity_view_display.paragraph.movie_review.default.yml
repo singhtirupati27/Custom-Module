@@ -1,0 +1,20 @@
+uuid: eefdbc63-b7cb-40f5-a818-684cb0a18c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.movie_review.field_add_review
+    - paragraphs.paragraphs_type.movie_review
+id: paragraph.movie_review.default
+targetEntityType: paragraph
+bundle: movie_review
+mode: default
+content:
+  field_add_review:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

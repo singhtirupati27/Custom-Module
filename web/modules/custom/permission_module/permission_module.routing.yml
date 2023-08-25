@@ -1,0 +1,31 @@
+permission_module.overview:
+  path: '/sample-permission-page'
+  defaults:
+    _controller: '\Drupal\permission_module\Controller\IndexController::overviewPage'
+    _title: 'Sample Permission Module'
+  requirements:
+    _permission: 'access content'
+
+permission_module.level1:
+  path: '/sample-permission-page/level1'
+  defaults:
+    _controller: '\Drupal\permission_module\Controller\IndexController::level1Page'
+    _title: 'Sample Permission Level 1'
+  requirements:
+    _permission: 'sample permission 1'
+
+permission_module.level2:
+  path: '/sample-permission-page/level2'
+  defaults:
+    _controller: '\Drupal\permission_module\Controller\IndexController::level2Page'
+    _title: 'Sample Permission Level 2'
+  requirements:
+    _permission: 'sample permission 2'
+
+permission_module.level3:
+  path: '/sample-permission-page/level3'
+  defaults:
+    _controller: '\Drupal\permission_module\Controller\IndexController::level3Page'
+    _title: 'Sample Permission Level 3'
+  requirements:
+    _permission: 'sample permission 3'

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module: 
+      - movie_module
+name: 'Movie'
+type: movie
+description: 'Content type that can be used to create movie content'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

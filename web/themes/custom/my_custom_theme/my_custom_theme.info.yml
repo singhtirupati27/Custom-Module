@@ -1,0 +1,23 @@
+name: Custom Bootstrap 5 sub-theme
+type: theme
+description: This is a sub-theme of Bootstrap 5
+core_version_requirement: ^9 || ^10
+base theme: bootstrap5
+
+libraries:
+  - my_custom_theme/global-styling
+
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  new_footer: 'New Footer'
+
+screenshot: screenshot.jpg
+logo: logo.svg

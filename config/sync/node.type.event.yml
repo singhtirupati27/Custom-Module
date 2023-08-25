@@ -1,0 +1,16 @@
+uuid: ddeead6d-fb92-41c5-b9ac-96782b842302
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - events_db_module
+_core:
+  default_config_hash: vXL4p3QVBIxBQfSDfknq0gkYK7V5zpS3dHnI6nviVjQ
+name: Events
+type: event
+description: 'Content type that can be used create event page.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

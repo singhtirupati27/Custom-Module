@@ -1,0 +1,39 @@
+uuid: 07609c97-1ecb-474b-bd68-76bbd4529ec2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.theater_details.field_cities
+    - field.field.paragraph.theater_details.field_theater
+    - field.field.paragraph.theater_details.field_timing
+    - paragraphs.paragraphs_type.theater_details
+id: paragraph.theater_details.default
+targetEntityType: paragraph
+bundle: theater_details
+mode: default
+content:
+  field_cities:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_theater:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_timing:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
