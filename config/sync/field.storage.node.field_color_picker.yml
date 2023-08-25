@@ -1,0 +1,19 @@
+uuid: a0b0a8e5-4f3c-4898-8ba6-dcad60867d27
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - rgb_color
+id: node.field_color_picker
+field_name: field_color_picker
+entity_type: node
+type: rgb_color
+settings: {  }
+module: rgb_color
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

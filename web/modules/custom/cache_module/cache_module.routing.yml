@@ -1,0 +1,14 @@
+cache_module.example:
+  path: '/cache-module/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\cache_module\Controller\CacheModuleController::build'
+  requirements:
+    _permission: 'access content'
+cache_module.get_random_number:
+  path: '/cache-module/gen-num'
+  defaults:
+    _title: 'Cache Practice'
+    _controller: '\Drupal\cache_module\Controller\CacheModuleController::getRandomNumber'
+  requirements:
+    _permission: 'access content'

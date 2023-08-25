@@ -1,0 +1,6 @@
+movie_budget.budget:
+  title: Movie Budget
+  parent: system.admin
+  description: 'Link for configuration for movie budget.'
+  route_name: movie_budget.settings
+  weight: 8

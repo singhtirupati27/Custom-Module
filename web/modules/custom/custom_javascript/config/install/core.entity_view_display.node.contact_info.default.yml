@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact_info.field_phone
+    - node.type.contact_info
+  module:
+    - user
+id: node.contact_info.default
+targetEntityType: node
+bundle: contact_info
+mode: default
+content:
+  field_phone:
+    type: basic_string
+    label: above
+    settings: { }
+    third_party_settings: { }
+    weight: 101
+    region: content
+  links:
+    settings: { }
+    third_party_settings: { }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

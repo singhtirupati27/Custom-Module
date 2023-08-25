@@ -1,0 +1,24 @@
+uuid: 112d6040-3960-40fb-aa46-a74662b2d173
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_type
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: Qp-ejDYjW_kxfWZOLy8LRCtOncUlEsCV9yFn59VNiYs
+id: node.event.field_event_type
+field_name: field_event_type
+entity_type: node
+bundle: event
+label: 'Event Type'
+description: 'Stores event type.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

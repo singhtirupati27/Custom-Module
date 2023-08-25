@@ -1,0 +1,8 @@
+name: Movie Module
+description: 'Movie content type.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:text
+  

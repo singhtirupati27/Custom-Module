@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\custom_movie_event\Event\NodeViewEvent;
+
+/**
+ * Implements hook_entity_view().
+ */
+function custom_movie_event_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->bundle() == 'movie' && $view_mode === 'full') {
+    // Instantiate the event.
+    $event = new NodeViewEvent($entity);
+    // Get the event dispatcher service and dispatch the event.
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+    $event_dispatcher->dispatch($event, NodeViewEvent::EVENT_NAME);
+  }
+}

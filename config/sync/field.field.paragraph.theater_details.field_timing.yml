@@ -1,0 +1,19 @@
+uuid: ec10eb36-c47f-4ca3-941c-ad7ada5a2872
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timing
+    - paragraphs.paragraphs_type.theater_details
+id: paragraph.theater_details.field_timing
+field_name: field_timing
+entity_type: paragraph
+bundle: theater_details
+label: Timing
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

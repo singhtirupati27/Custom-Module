@@ -1,0 +1,7 @@
+custom_javascript.my_js:
+  path: '/custom-js/example'
+  defaults:
+    _title: 'Custom JS'
+    _controller: '\Drupal\custom_javascript\Controller\CustomJsController::build'
+  requirements:
+    _permission: 'access content'

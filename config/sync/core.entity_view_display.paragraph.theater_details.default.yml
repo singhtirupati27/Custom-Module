@@ -1,0 +1,50 @@
+uuid: 3986ca94-945f-4dbc-9d7f-1f2a468c87a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.theater_details.field_cities
+    - field.field.paragraph.theater_details.field_theater
+    - field.field.paragraph.theater_details.field_timing
+    - paragraphs.paragraphs_type.theater_details
+id: paragraph.theater_details.default
+targetEntityType: paragraph
+bundle: theater_details
+mode: default
+content:
+  field_cities:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_theater:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_timing:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

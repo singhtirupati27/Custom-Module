@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.body
+    - field.field.node.movie.field_movie_image
+    - field.field.node.movie.field_movie_price
+    - image.style.movie_banner
+    - node.type.movie
+  module:
+    - image
+    - text
+    - user
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: { }
+    third_party_settings: { }
+  field_movie_image:
+    label: hidden
+    type: image
+    weight: 1
+    settings:
+      image_link: ''
+      image_style: movie_banner
+    third_party_settings: { }
+  field_movie_price:
+    label: inline
+    type: number_decimal
+    weight: 2
+    settings:
+      precision: 10
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: { }
+  links:
+    weight: 0
+hidden: { }

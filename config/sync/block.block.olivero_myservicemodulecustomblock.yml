@@ -1,0 +1,20 @@
+uuid: 4be30aaa-63bc-428c-a9e6-42bffba311f3
+langcode: en
+status: false
+dependencies:
+  module:
+    - my_service
+  theme:
+    - olivero
+id: olivero_myservicemodulecustomblock
+theme: olivero
+region: hero
+weight: 0
+provider: null
+plugin: my_service_block
+settings:
+  id: my_service_block
+  label: 'My Service Module Custom Block'
+  label_display: visible
+  provider: my_service
+visibility: {  }

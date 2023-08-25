@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_date
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_textarea_with_summary
+    weight: 101
+    settings: {}
+    third_party_settings: {}
+  field_event_date:
+    label: inline
+    type: datetime_default
+    weight: 102
+    settings:
+      placeholder: 'Event happening date.'
+    third_party_settings: {}
+  field_event_type:
+    label: above
+    type: text_textfield
+    weight: 103
+    settings: {}
+    third_party_settings: {}
+  links:
+    weight: 100
+hidden: {}
