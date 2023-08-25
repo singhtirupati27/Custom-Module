@@ -1,0 +1,19 @@
+uuid: bee4dc6e-aa3c-4e61-a218-12eeba113ceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cities
+    - node.type.practice
+id: node.practice.field_cities
+field_name: field_cities
+entity_type: node
+bundle: practice
+label: Cities
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

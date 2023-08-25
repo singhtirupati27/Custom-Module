@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.practice.field_cities
     - field.field.node.practice.field_color_picker
     - field.field.node.practice.field_kjbkb
+    - field.field.node.practice.field_reviews
     - node.type.practice
   module:
+    - entity_reference_revisions
     - rgb_color
     - user
 id: node.practice.full
@@ -20,12 +23,22 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 102
+    weight: 1
+    region: content
+  field_reviews:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_cities: true
   field_kjbkb: true

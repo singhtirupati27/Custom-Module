@@ -1,0 +1,10 @@
+# Main theme library.
+global:
+  css:
+    base:
+      css/style.css: {}
+custom_page_css:
+  version: 1.x
+  css:
+    theme:
+      css/page.css: {}
