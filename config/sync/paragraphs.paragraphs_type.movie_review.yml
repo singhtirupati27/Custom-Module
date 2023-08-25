@@ -1,0 +1,10 @@
+uuid: 55f37fd5-1cb8-429f-b945-d89cd8b8e7cb
+langcode: en
+status: true
+dependencies: {  }
+id: movie_review
+label: 'Movie Review'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

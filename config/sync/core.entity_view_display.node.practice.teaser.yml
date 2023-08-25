@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.practice.field_cities
     - field.field.node.practice.field_color_picker
     - field.field.node.practice.field_kjbkb
+    - field.field.node.practice.field_reviews
     - node.type.practice
   module:
     - rgb_color
@@ -28,4 +30,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_cities: true
   field_kjbkb: true
+  field_reviews: true

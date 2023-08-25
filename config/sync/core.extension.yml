@@ -13,14 +13,18 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   custom_events: 0
+  custom_javascript: 0
   custom_movie_event: 0
   datetime: 0
   dblog: 0
   devel: 0
+  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   events_db_module: 0
   field: 0
   field_ui: 0
@@ -52,15 +56,25 @@ module:
   shortcut: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   toolbar: 0
   tour: 0
+  twig_tweak: 0
   update: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
+  workflows: 0
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  bootstrap5: 0
+  my_sub_theme: 0
+  bootstrap: 0
 profile: standard

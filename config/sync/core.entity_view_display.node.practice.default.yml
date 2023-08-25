@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.practice.field_cities
     - field.field.node.practice.field_color_picker
     - field.field.node.practice.field_kjbkb
+    - field.field.node.practice.field_reviews
     - node.type.practice
   module:
     - datetime
+    - entity_reference_revisions
     - rgb_color
     - user
 id: node.practice.default
@@ -15,6 +18,14 @@ targetEntityType: node
 bundle: practice
 mode: default
 content:
+  field_cities:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
   field_color_picker:
     type: rgb_hex_formatter
     label: above
@@ -30,6 +41,15 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_reviews:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     settings: {  }

@@ -1,0 +1,19 @@
+uuid: 057af7a1-9e46-42bc-b04e-20675d278fd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add_review
+    - paragraphs.paragraphs_type.movie_review
+id: paragraph.movie_review.field_add_review
+field_name: field_add_review
+entity_type: paragraph
+bundle: movie_review
+label: 'Add Review'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
