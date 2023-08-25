@@ -1,0 +1,24 @@
+uuid: 05958460-860a-46e4-88a6-8525e76e7926
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - telephone
+  enforced:
+    module:
+      - custom_javascript
+_core:
+  default_config_hash: QceFAEw0x7U05ADsRGogWlQWhcqtJRQa39uDJ15-bbQ
+id: node.field_phone
+field_name: field_phone
+entity_type: node
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,15 @@
+name: Javascript API
+description: 'Implementing javascript sitewide'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+
+libraries:
+  custom_javascript_sitewide:
+    version: 1.x
+    js:
+      js/sitewide.js: {}
+  custom_javascript_bundle:
+    version: 1.x
+    js:
+      js/bundle.js

@@ -1,0 +1,27 @@
+events_db_module.event_list:
+  title: 'Event List'
+  description: 'Link for event list dashboard.'
+  parent: system.admin
+  route_name: events_db_module.event_dashboard
+  weight: 10
+
+events_db_module.event_list_menu:
+  title: 'FT2023-370: Event List'
+  description: 'Link for event dashboard.'
+  menu_name: main
+  route_name: events_db_module.event_dashboard
+  weight: 22
+
+events_db_module.event_taxonomy:
+  title: 'Event Taxonomy'
+  description: 'Link for event taxonomy page.'
+  parent: system.admin
+  route_name: events_db_module.event_form
+  weight: 11
+
+events_db_module.event_taxonomy_menu:
+  title: 'FT2023-370: Event Taxonomy'
+  description: 'Link for event taxonomy page.'
+  menu_name: main
+  route_name: events_db_module.event_form
+  weight: 23

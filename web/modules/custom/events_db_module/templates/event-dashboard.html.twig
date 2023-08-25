@@ -1,0 +1,73 @@
+<div class="event-dashboard">
+  <div class="yearly-events">
+    <h2>Yearly Events</h2>
+    {% if yearly_event is empty %}
+      <p>No records found!</p>
+    {% else %}
+      <table class="table table-striped table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>Event Year</th>
+            <th>Number of Events</th>
+          </tr>
+        <thead>
+        <tbody>
+          {% for event in yearly_event %}
+            <tr>
+              <td>{{ event.year }}</td>
+              <td>{{ event.yearly_events }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+
+  <div class="quarterly-events">
+    <h2>Quarterly Events</h2>
+    {% if quarterly_event is empty %}
+      <p>No records found!</p>
+    {% else %}
+      <table class="table table-striped table-hover">
+        <thead class="table-success">
+          <tr>
+            <th>Quarter</th>
+            <th>Number of Events</th>
+          </tr>
+        <thead>
+        <tbody>
+          {% for event in quarterly_event %}
+            <tr>
+              <td>{{ event.quarter }}</td>
+              <td>{{ event.quarterly_events }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+
+  <div class="event-type">
+    <h2>Event Type</h2>
+    {% if event_type is empty %}
+      <p>No records found!</p>
+    {% else %}
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Event Type</th>
+            <th>Number of Events</th>
+          </tr>
+        <thead>
+        <tbody>
+          {% for event in event_type %}
+            <tr>
+              <td>{{ event.field_event_type_value }}</td>
+              <td>{{ event.event_type }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function sample_module_theme($existing, $type, $theme, $path) {
+  return [
+    'sample_module_theme_hook' => [
+      'render element' => 'children',
+      'template' => 'sample-module-theme-hook',
+      'path' => $path . '/templates',
+      'variables' => [
+        'variable1' => t('HTML'),
+        'variable2' => t('CSS'),
+        'variable3' => t('JS'),
+      ],
+    ],
+  ];
+}

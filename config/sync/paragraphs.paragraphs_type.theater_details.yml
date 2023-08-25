@@ -1,0 +1,10 @@
+uuid: 5a0241e2-fc53-4492-bf73-c84fc50802d7
+langcode: en
+status: true
+dependencies: {  }
+id: theater_details
+label: 'Theater Details'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

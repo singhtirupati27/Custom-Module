@@ -1,0 +1,8 @@
+name: Movie Budget
+description: 'Show information about movie budget.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - movie_module
+configure: movie_budget.settings

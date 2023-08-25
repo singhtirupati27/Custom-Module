@@ -1,0 +1,26 @@
+custom_javascript_basic:
+  version: 1.x
+  js:
+    js/practice.js: {}
+
+custom_javascript_sitewide:
+  version: 1.x
+  js:
+    js/sitewide.js: {}
+
+custom_javascript_bundle:
+  version: 1.x
+  js:
+    js/bundle.js: {}
+
+custom_javascript_css:
+  version: 1.x
+  css:
+    theme:
+      css/bundle.css: {}
+
+custom_javascript_practice:
+  version: 1.x
+  css:
+    theme:
+      css/practice.css: {}

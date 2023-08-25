@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * This file demonstrates how to use hook functions.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function pavilion_cron() {
+  \Drupal::messenger()->addMessage(t('Hello from pavilion cron hook!'));
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function pavilion_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // \Drupal::messenger()->addMessage(t('form_id of this form is @id: ', ['@id' => $form_id]));
+  if ($form_id == 'node_article_edit_form') {
+    $form['actions']['submit']['#value'] = t('Save this awesome article!');
+  }
+
+  if ($form_id == 'pavilion_form') {
+    $form['phone']['#description'] = t('Phone number must be indian.');
+
+    $markup = '<div id="my-custom-markup"><h3>Here is my markup</h3></div>';
+    $form['field_mycustommarkup'] = [
+      '#type' => 'markup',
+      '#markup' => $markup,
+      '#weight' => 1,
+    ];
+
+  }
+
+}

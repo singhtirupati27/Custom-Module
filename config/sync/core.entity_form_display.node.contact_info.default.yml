@@ -1,0 +1,82 @@
+uuid: 5e680e5e-e771-40dd-9866-b58b1315b7de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact_info.field_phone
+    - node.type.contact_info
+  module:
+    - path
+    - telephone
+_core:
+  default_config_hash: saudjLQTPNURBm2MmfwK5pESAKibPKlWBnpBM_r4nRk
+id: node.contact_info.default
+targetEntityType: node
+bundle: contact_info
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_phone:
+    type: telephone_default
+    weight: 121
+    region: content
+    settings:
+      placeholder: 'Enter your phone number'
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

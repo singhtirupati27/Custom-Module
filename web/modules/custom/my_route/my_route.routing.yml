@@ -1,0 +1,26 @@
+my_route.basicroute:
+  path: '/my-route/basic-page'
+  defaults:
+    _controller: '\Drupal\my_route\Controller\HomeController::contentPage'
+    _title: 'First route page.'
+  requirements:
+    _permission: 'access custom page'
+    _role: 'administrator+content_editor'
+
+my_route.customaccess:
+  path: '/my-route/custom-access'
+  defaults:
+    _controller: '\Drupal\my_route\Controller\HomeController::contentPage'
+    _title: 'Routing custom access check'
+  requirements:
+    _custom_access: '\Drupal\my_route\Controller\HomeController::accessCheck'
+
+my_route.dynamicaccess:
+  path: '/campaign/value/{id}'
+  defaults:
+    _controller: '\Drupal\my_route\Controller\HomeController::dynamicRoute'
+    _title: 'Dynamic routing'
+  requirements:
+    _permission: 'access custom page'
+    _role: 'administrator'
+    id: ^\d+$

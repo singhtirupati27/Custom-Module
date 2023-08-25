@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * This is used for adding js and cs library to node, form.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function custom_javascript_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->getType() == 'contact_info') {
+    $variables['#attached']['library'][] = 'custom_javascript/custom_javascript_css';
+    $variables['#attached']['library'][] = 'custom_javascript/custom_javascript_bundle';
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function custom_javascript_page_attachments_alter(array &$attachments) {
+  // Attaching javascript file to all the pages.
+  $attachments['#attached']['library'][] = 'custom_javascript/custom_javascript_sitewide';
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'custom_javascript.my_js') {
+    $variables['#attached']['library'][] = 'custom_javascript/custom_javascript_practice';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_javascript_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_contact_info_form' || $form_id === 'node_contact_info_edit_form') {
+    $form['#attached']['library'][] = 'custom_javascript/custom_javascript_bundle';
+  }
+}
