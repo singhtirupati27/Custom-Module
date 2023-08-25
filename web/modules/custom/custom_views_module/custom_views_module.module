@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * This file used to change sorting in views.
+ */
+
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function custom_views_module_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'movie_list' && $query->displayHandler->getPluginId() == 'page') {
+    $query->orderby = [
+      [
+        'field' => 'title',
+        'direction' => 'DESC',
+      ],
+    ];
+    $query->addOrderBy('node__field_movie_price', 'field_movie_price_value', 'ASC');
+  }
+  if ($view->id() == 'events_list' && $query->displayHandler->getPluginId() == 'page') {
+    $query->orderby = [
+      [
+        'field' => 'title',
+        'direction' => 'DESC',
+      ]
+    ];
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function custom_views_module_views_data_alter(&$data) {
+  // Expose the uid as a relationship to users.
+  $data['node_field_data']['user_relationship'] = [
+    'title' => t('My User Relationship'),
+    'help' => t('Add a relationship to the user entity. Provided by Custom_views_module.'),
+    'relationship' => [
+      'base' => 'users_field_data',
+      'field' => 'uid',
+      'id' => 'standard',
+    ],
+  ];
+
+  // Add fields from the related user entity to be displayed in the view.
+  $data['users_field_data']['name'] = [
+    'title' => t('Custom User Name'),
+    'help' => t('The user name of the related user entity. Provided by Custom_views_module.'),
+    'field' => [
+      'id' => 'standard',
+      'relationship' => [
+        'id' => 'user_relationship',
+        // 'base' => 'node_field_data',
+        // 'base field' => 'uid',
+      ],
+    ],
+  ];
+  $data['users_field_data']['mail'] = [
+    'title' => t('Custom User Email'),
+    'help' => t('The user email of the related user entity. Provided by Custom_views_module.'),
+    'field' => [
+      'id' => 'standard',
+      'relationship' => [
+        'id' => 'user_relationship',
+        // 'base' => 'node_field_data',
+        // 'base field' => 'uid',
+      ],
+    ],
+  ];
+
+  // Add fields from the node entity.
+  $data['node_field_data']['nid']['title'] = t('ID information of the content.');
+  $data['node_field_data']['nid']['help'] = t('Provides node information.');
+}
