@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_info.field_phone
+    - node.type.contact_info
+  module:
+    - user
+id: node.contact_info.teaser
+targetEntityType: node
+bundle: contact_info
+mode: teaser
+content:
+  links:
+    settings: { }
+    third_party_settings: { }
+    weight: 100
+    region: content
+hidden:
+  field_phone: true
+  langcode: true
